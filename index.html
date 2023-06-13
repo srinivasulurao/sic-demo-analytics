@@ -8,7 +8,7 @@
 <html>
     <head><title>Demo</title></head>
     <body>
-        <button onclick="triggerGA()">Click Me</button>
+        <button onclick="triggerGA()" onmouseover="triggerHoverEvent()">Click Me</button>
     </body>
 </html>
 
@@ -19,4 +19,15 @@
         'screen_name': 'Home'
       });
     }
+  
+  function triggerHoverEvent(){
+    console.log('hover triggered');
+    gtag('event', 'short_widget_hover', {
+            action: 'Hover',
+            category: 'Home',
+            label: 'Shortcut widget',
+            name: 'Shortcut Widget Hovering',
+            value: true
+    });
+  }
 </script>
